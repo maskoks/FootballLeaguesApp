@@ -8,6 +8,6 @@
 import Foundation
 
 protocol SeasonsDisplayLogic: AnyObject {
-    func display()
+    func display(_ model: [Season])
 }
 

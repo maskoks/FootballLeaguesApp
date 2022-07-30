@@ -8,10 +8,10 @@
 import UIKit
 
 final class SeasonsAssembly {
-    static func build() -> UIViewController {
+    static func build(_ model: SeasonsModel) -> UIViewController {
         let controller = SeasonsViewController()
 
-        let presenter = SeasonsPresenter(view: controller)
+        let presenter = SeasonsPresenter(view: controller, model: model)
         controller.setPresenter(presenter)
 
         return controller
