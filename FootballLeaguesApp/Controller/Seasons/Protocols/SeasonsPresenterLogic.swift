@@ -9,6 +9,6 @@ import Foundation
 
 protocol SeasonsPresenterLogic: AnyObject {
     func onViewDidLoad()
-
     func handlePullToRefresh()
+    func handleSelectRow(selectedSeason: Season)
 }

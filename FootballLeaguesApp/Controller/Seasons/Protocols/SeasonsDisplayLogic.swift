@@ -9,5 +9,6 @@ import Foundation
 
 protocol SeasonsDisplayLogic: AnyObject {
     func display(_ model: [Season])
+    func goToStats(_ model: StatsModel)
 }
 

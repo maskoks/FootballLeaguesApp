@@ -8,15 +8,17 @@
 import UIKit
 
 extension UIImageView {
-    func loadFrom(urlString: String) {
+    func setImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
+        ImageCache.shared.imageFor(url: url) { [weak self] image, error  in
+            if let image = image {
+                DispatchQueue.main.async { [weak self] in
+                    self?.image = image
                 }
+            }
+
+            if let error = error {
+                print(error)
             }
         }
     }

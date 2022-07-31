@@ -68,6 +68,8 @@ private extension SeasonsViewController {
 private extension SeasonsViewController {
     func setup() {
         showNavigationBar()
+        navigationItem.title = "Select season"
+
         setupTableView()
         setupRefreshControl()
     }
@@ -102,6 +104,11 @@ extension SeasonsViewController: SeasonsDisplayLogic {
             self.tableView.reloadData()
         }
     }
+
+    func goToStats(_ model: StatsModel) {
+        let statsViewController = StatsAssembly.build(model)
+        self.navigationController?.pushViewController(statsViewController, animated: true)
+    }
 }
 
 extension SeasonsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -125,5 +132,6 @@ extension SeasonsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.handleSelectRow(selectedSeason: data[indexPath.row])
     }
 }

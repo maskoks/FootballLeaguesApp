@@ -10,10 +10,8 @@ import UIKit
 final class LeaguesAssembly {
     static func build() -> UIViewController {
         let controller = LeaguesViewController()
-
         let presenter = LeaguesPresenter(view: controller)
         controller.setPresenter(presenter)
-
         return controller
     }
 }

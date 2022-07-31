@@ -9,6 +9,5 @@ import Foundation
 
 protocol LeaguesPresenterLogic: AnyObject {
     func onViewDidLoad()
-
     func handlePullToRefresh()
 }

@@ -8,5 +8,7 @@
 import Foundation
 
 struct StatsModel {
-    
+    let leagueID: String
+    let seasons: [Season]
+    var selectedSeason: Season
 }

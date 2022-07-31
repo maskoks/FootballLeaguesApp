@@ -20,4 +20,18 @@ struct DateHelper {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         return "\(dateFormatter.string(from: startDate)) to \(dateFormatter.string(from: endDate))"
     }
+
+    static func configureSeasonYears(from startDate: Date, to endDate: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        return "\(dateFormatter.string(from: startDate))/\(dateFormatter.string(from: endDate))"
+    }
+
+    static func configureSeasonShortYears(from startDate: Date, to endDate: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        return "\(dateFormatter.string(from: startDate))/\(dateFormatter.string(from: endDate))"
+    }
 }

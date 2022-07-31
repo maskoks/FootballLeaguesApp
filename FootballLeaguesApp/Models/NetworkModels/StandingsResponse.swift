@@ -17,10 +17,10 @@ struct LeagueStandings: Decodable {
     let abbreviation: String
     let seasonDisplay: String
     let season: Int
-    let standings: [Standings]
+    let standings: [Standing]
 }
 
-struct Standings: Decodable {
+struct Standing: Decodable {
     let team: Team
     let note: Note?
     let stats: [Stats]
@@ -35,7 +35,7 @@ struct Team: Decodable {
     let displayName: String
     let shortDisplayName: String
     let isActive: Bool
-    let logos: [TeamLogos]
+    let logos: [TeamLogos]?
 }
 
 struct Note: Decodable {

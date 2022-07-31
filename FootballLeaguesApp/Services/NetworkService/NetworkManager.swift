@@ -16,28 +16,6 @@ final class NetworkManager {
             return
         }
         request(url: url, completion: completion)
-//        let session = URLSession.shared
-//        let request = URLRequest(url: url)
-//        let task = session.dataTask(with: request) { data, response, error in
-//            guard error == nil else {
-//                return
-//            }
-//            guard let data = data else {
-//                return
-//            }
-//            do {
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                let response = try decoder.decode(LeagueResponse.self, from: data)
-//                print(response)
-//                completion(response, error)
-//
-//            } catch {
-//                print(error)
-//                completion(nil, error)
-//            }
-//        }
-//        task.resume()
     }
 
     func getSeasons(leagueID: String, completion: @escaping (SeasonsResponse?, Error?) -> Void) {
@@ -46,27 +24,6 @@ final class NetworkManager {
             return
         }
         request(url: url, completion: completion)
-//        let session = URLSession.shared
-//        let request = URLRequest(url: url)
-//        let task = session.dataTask(with: request) { data, response, error in
-//            guard error == nil else {
-//                return
-//            }
-//            guard let data = data else {
-//                return
-//            }
-//            do {
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                let response = try decoder.decode(SeasonsResponse.self, from: data)
-//                print(response)
-//                completion(response, error)
-//
-//            } catch {
-//                print(error)
-//            }
-//        }
-//        task.resume()
     }
 
     func getStandings(leagueID: String, season: Int, isAscending: Bool, completion: @escaping (StandingsResponse?, Error?) -> Void) {
@@ -74,28 +31,8 @@ final class NetworkManager {
             completion(nil, NSError(domain: "Invalid URL", code: 1))
             return
         }
+        print(NetworkManagerConstants.apiStandingsURL(leagueID: leagueID, year: season, isAscending: isAscending))
         request(url: url, completion: completion)
-//        let session = URLSession.shared
-//        let request = URLRequest(url: url)
-//        let task = session.dataTask(with: request) { data, response, error in
-//            guard error == nil else {
-//                return
-//            }
-//            guard let data = data else {
-//                return
-//            }
-//            do {
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                let response = try decoder.decode(StandingsResponse.self, from: data)
-//                print(response)
-//                completion(response, error)
-//
-//            } catch {
-//                print(error)
-//            }
-//        }
-//        task.resume()
     }
 
     private func request<T: Decodable>(url: URL, completion: @escaping (T?, Error?) -> Void) {

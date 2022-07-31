@@ -8,12 +8,10 @@
 import UIKit
 
 final class StatsAssembly {
-    static func build() -> UIViewController {
+    static func build(_ model: StatsModel) -> UIViewController {
         let controller = StatsViewController()
-
-        let presenter = StatsPresenter(view: controller)
+        let presenter = StatsPresenter(view: controller, model: model)
         controller.setPresenter(presenter)
-
         return controller
     }
 }

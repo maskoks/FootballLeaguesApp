@@ -8,5 +8,7 @@
 import Foundation
 
 protocol StatsDisplayLogic: AnyObject {
-    func display()
+    func display(_ season: Season)
+    func display(_ seasons: [Season])
+    func display(_ team: [Standing])
 }

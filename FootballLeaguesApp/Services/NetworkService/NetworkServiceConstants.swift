@@ -31,6 +31,6 @@ struct NetworkManagerConstants {
 
     static func apiStandingsURL(leagueID: String, year: Int, isAscending: Bool) -> String {
         let sortOption = isAscending ? "asc" : "desc"
-        return "\(apiURL)/\(leagueID)/\(ApiCase.standings)?\(ApiOption.season)=\(year)&\(ApiOption.sort)=\(sortOption)"
+        return "\(apiURL)/\(ApiCase.leagues)/\(leagueID)/\(ApiCase.standings)?\(ApiOption.season)=\(year)&\(ApiOption.sort)=\(sortOption)"
     }
 }

@@ -11,7 +11,6 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureBaseViewController()
     }
 
@@ -21,7 +20,6 @@ class BaseViewController: UIViewController {
     }
 
     // MARK: Public methods
-
     func hideNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -34,5 +32,4 @@ class BaseViewController: UIViewController {
     private func configureBaseViewController() {
         view.backgroundColor = .systemBackground
     }
-
 }

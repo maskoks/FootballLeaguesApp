@@ -90,7 +90,6 @@ private extension LeaguesViewController {
     }
 }
 
-
 // MARK: - Display Logic
 extension LeaguesViewController: LeaguesDisplayLogic {
     func display(_ model: [League]) {
@@ -132,5 +131,3 @@ extension LeaguesViewController: UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.pushViewController(seasonsViewController, animated: true)
     }
 }
-
-

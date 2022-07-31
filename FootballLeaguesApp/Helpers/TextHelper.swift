@@ -22,4 +22,18 @@ struct TextHelper {
 
         return NSMutableAttributedString(string: text, attributes: attributes)
     }
+
+    static func configureBold(text: String, color: UIColor, fontSize: CGFloat) -> NSMutableAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.0
+        paragraphStyle.alignment = .left
+        paragraphStyle.lineBreakMode = .byTruncatingTail
+
+        let attributes: [NSAttributedString.Key : Any] = [.kern: -0.2,
+                                                          .paragraphStyle: paragraphStyle,
+                                                          .foregroundColor: color,
+                                                          .font: UIFont.boldSystemFont(ofSize: fontSize)]
+
+        return NSMutableAttributedString(string: text, attributes: attributes)
+    }
 }

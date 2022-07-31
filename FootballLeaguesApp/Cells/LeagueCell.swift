@@ -39,8 +39,7 @@ final class LeagueCell: UITableViewCell {
 
         contentView.addSubview(logo)
         logo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15.0).isActive = true
-        logo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10.0).isActive = true
-        logo.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10.0).isActive = true
+        logo.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         logo.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
         logo.widthAnchor.constraint(equalTo: logo.heightAnchor).isActive = true
 
@@ -60,6 +59,6 @@ final class LeagueCell: UITableViewCell {
         guard let model = model else { return }
         nameLabel.attributedText = TextHelper.configure(text: model.league.name, color: UIColor.label, fontSize: 16.0)
         abbrLabel.attributedText = TextHelper.configure(text: model.league.abbr, color: UIColor.secondaryLabel, fontSize: 11.0)
-        logo.loadFrom(urlString: model.league.logos.light)
+        logo.setImage(from: model.league.logos.light)
     }
 }

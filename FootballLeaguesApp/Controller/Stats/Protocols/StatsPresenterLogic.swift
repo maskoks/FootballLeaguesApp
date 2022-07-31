@@ -9,5 +9,6 @@ import Foundation
 
 protocol StatsPresenterLogic: AnyObject {
     func onViewDidLoad()
-    func onViewWillAppear()
+    func handlePullToRefresh()
+    func handleSeasonPick(_ season: Season)
 }
